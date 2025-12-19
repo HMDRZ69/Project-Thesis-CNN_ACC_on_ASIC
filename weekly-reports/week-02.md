@@ -7,7 +7,7 @@
         Verilog
         SystemVerilog
         VHDL
-    3. What is a testbench?
+    3. Definition and concept of a testbench.
 
 ## Challenge & Blocking points
     None

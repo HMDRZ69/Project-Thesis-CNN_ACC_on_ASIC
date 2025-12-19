@@ -13,6 +13,7 @@ Successful simulation results
 
 *Waveform captured from Cadence Xcelium SimVision. Inputs: a, b; Outputs: sum, carry.*
 
+![Half-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/half_adder_Outline.png)
 
 ## Code Script
 **AND Gate RTL (rtl/and_gate.v):**
