@@ -1,9 +1,11 @@
 # Weekly Progress Report - Week 01
-Date: 07.11.2025
+**Date:** 07.11.2025
 
 ## What have done this week:
     1. Learn about the analog and digital IC design
-    2. Get familiar with Cadence Tools:
+    2. Get access to the University Server
+        Making VPN & open the Cadence Tools
+    3. Get familiar with Cadence Tools:
         Vistuoso
         Genus
         Innovus

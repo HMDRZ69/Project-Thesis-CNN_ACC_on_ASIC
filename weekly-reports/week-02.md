@@ -1,5 +1,5 @@
 # Weekly Progress Report - Week 02
-Date: 14.11.2025
+**Date:** 14.11.2025
 
 ## What have done this week:
     1. ASIC definition and basic 
