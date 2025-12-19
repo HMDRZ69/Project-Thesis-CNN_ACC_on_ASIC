@@ -13,54 +13,54 @@ Successful simulation results
 
 *Waveform captured from Cadence Xcelium SimVision. Inputs: a, b; Outputs: sum, carry.*
 
-![Half-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/half_adder_Outline.png)
+![Half-Adder Simulation Outline](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/half_adder_Outline.png)
 
 ## Code Script
 **AND Gate RTL (rtl/and_gate.v):**
-// Full Code in rtl
+    // Full Code in rtl
 
-module and_gate(
-    input a,
-    input b,
-    output y
-);
-    // Behavioral continuous assignment
-    assign y = a & b;
-endmodule
+    module and_gate(
+        input a,
+        input b,
+        output y
+     );
+        // Behavioral continuous assignment
+        assign y = a & b;
+    endmodule
 
 **Half-Adder RTL (rtl/halfadder.v):**
-// Full Code in rtl
+    // Full Code in rtl
 
-module half_adder(input A, input B, output SUM, output CARRY);
+    module half_adder(input A, input B, output SUM, output CARRY);
 
-    assign SUM = A ^ B;   //XOR Operation
-    assign CARRY = A & B;   //AND Operation
+        assign SUM = A ^ B;   //XOR Operation
+        assign CARRY = A & B;   //AND Operation
 
-endmodule
+    endmodule
 
 **Testbench (simulation/and_tb.v):**
-// Full Code in rtl
+    // Full Code in rtl
 
-initial begin
-    a = 0; b = 0; #10;
-    a = 0; b = 1; #10;
-    a = 1; b = 0; #10;
-    a = 1; b = 1; #10;
+    initial begin
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
 
-    //End Simulation
- end
+        //End Simulation
+    end
 
 **Testbench excerpt (simulation/tb_half_adder.v):**
-// Full Code in rtl
+    // Full Code in rtl
 
-initial begin
-    a = 0; b = 0;
-    #10 a = 0; b = 1;
-    #10 a = 1; b = 0;
-    #10 a = 1; b = 1;
+    initial begin
+        a = 0; b = 0;
+        #10 a = 0; b = 1;
+        #10 a = 1; b = 0;
+        #10 a = 1; b = 1;
 
-    #10 $stop;  // Stop simulation
-end
+        #10 $stop;  // Stop simulation
+    end
 
 ## Challenge & Blocking points
     - Code written and operated via VS Code running on Windows, but the execution could not takes place remotely on the University Server
