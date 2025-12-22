@@ -17,7 +17,7 @@ Successful simulation results
 **Full-Adder RTL (rtl/fulladder.v):**
     // Full Code in rtl
 
-        module full_adder(
+    module full_adder(
         input A, input B, input Cin, output SUM, output Cout);
 
         assign SUM = A ^ B ^ Cin;
