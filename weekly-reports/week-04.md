@@ -8,17 +8,16 @@
 ### Results & Outputs
 Successful simulation results
 
-![Half-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/half_adder_waveform.png)
+![Full-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_waveform.png)
 
-*Waveform captured from Cadence Xcelium SimVision. Inputs: a, b; Outputs: sum, carry.*
-
-![Half-Adder Simulation Outline](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/half_adder_Outline.png)
+*Waveform captured from Cadence Xcelium SimVision. Inputs: a, b, cin; Outputs: sum, cout.*
+![Full-Adder Simulation Outline](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_outline.png)
 
 ## Code Script
 **Full-Adder RTL (rtl/fulladder.v):**
     // Full Code in rtl
 
-   module full_adder(
+        module full_adder(
         input A, input B, input Cin, output SUM, output Cout);
 
         assign SUM = A ^ B ^ Cin;
