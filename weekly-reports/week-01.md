@@ -6,7 +6,8 @@
     2. Get access to the University Server:
         Making VPN & find the Cadence Tools
     3. Get familiar with Cadence Tools and their operation:
-        Vistuoso/Xcelium
+        Vistuoso
+        Xcelium
         Genus
         Innovus
         Tempus

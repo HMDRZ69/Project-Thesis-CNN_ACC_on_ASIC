@@ -4,7 +4,6 @@
 ## What have done this week:
     1. Learning Verilog structure and its operators
     2. Implemented some basic operators and adders (AND Gate, Half-adder provided) + tesetbenches as a warm-up for digital design flow
-    3. Comprehension of the Verilog coding
 
 ### Results & Outputs
 Successful simulation results
@@ -64,11 +63,10 @@ Successful simulation results
 
 ## Challenge & Blocking points
     - Code written and operated via VS Code running on Windows, but the execution could not takes place remotely on the University Server
-        Write the code directly via VS Code running on the University Server (Linux)
+        SOLUTION: Write the code directly via VS Code running on the University Server (Linux)
     - Mistakes involving naming and structural format
-        The observed errors were primarily due to improperly written names and incorrect structural definitions - Solved
+        SOLUTION: The observed errors were primarily due to improperly written names and incorrect structural definitions
 
 ## Plan for the Next Week:
-    1. Implement Full-Adder and it's testbench
-    2. Comprehension of the design flow
-    3. Start studying CNN Accelerator
+    1. Implemention of a Full-Adder and it's testbench to deeper understanding of design flow 
+    2. Review the IHP SG13G2 Rules
