@@ -47,5 +47,4 @@ Successful simulation results
     1. Ensure proper access to the SG13G2 PDK on the university server.
     2. Locate and verify the exact directory path of the SG13G2 PDK on the university server.
     3. Define and configure the required Cadence environment variables.
-    4. Add the necessary configurations to the .bashrc and .cdsinit files.
-    5. Prepare the Cadence Virtuoso environment to initiate the actual design phase.
+    4. Prepare the Cadence Virtuoso environment to initiate the actual design phase.
