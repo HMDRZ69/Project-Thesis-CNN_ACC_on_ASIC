@@ -44,4 +44,4 @@ Successful simulation results
     SOLUTION: Re-running the simulation with proper access permissions resolved the issue and enabled waveform visualization.
 
 ## Plan for the Next Week:
-    1. Set up the GitHub repository structure for weekly progress reporting 
+    1. Set up the GitHub repository structure for weekly progress reporting.
