@@ -14,7 +14,7 @@
     - Push to GitHub failed due to missing remote origin or incorrect branch name (main vs master).
     - Error when copying screenshot files to simulation folder in PowerShell because of spaces in filenames.
    
-   SOLUTIONS applied:
+    SOLUTIONS applied:
     - Set global git config: git config --global user.name "My Name" and user.email
     - Added remote: git remote add origin <url> and set branch: git branch -M main
     - Renamed screenshot files to remove spaces (e.g., half adder waveform.png → half_adder_waveform.png)
