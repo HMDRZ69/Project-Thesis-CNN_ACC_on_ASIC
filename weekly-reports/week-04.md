@@ -44,7 +44,4 @@ Successful simulation results
     SOLUTION: Re-running the simulation with proper access permissions resolved the issue and enabled waveform visualization.
 
 ## Plan for the Next Week:
-    1. Ensure proper access to the SG13G2 PDK on the university server.
-    2. Locate and verify the exact directory path of the SG13G2 PDK on the university server.
-    3. Define and configure the required Cadence environment variables.
-    4. Prepare the Cadence Virtuoso environment to initiate the actual design phase.
+    1. Set up the GitHub repository structure for weekly progress reporting 
