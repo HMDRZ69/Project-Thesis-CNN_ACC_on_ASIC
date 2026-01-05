@@ -1,21 +1,27 @@
-# Weekly Progress Report - Week 01
-**Date:** 07.11.2025
+# Weekly Progress Report – Week 01  
+**Date:** November 7, 2025
 
-## What have done this week:
-    1. Learn some basic of the analog and digital IC design
-    2. Get access to the University Server:
-        Making VPN & find the Cadence Tools
-    3. Get familiar with Cadence Tools and their operation:
-        Vistuoso
-        Xcelium
-        Genus
-        Innovus
-        Tempus
-        Voltus
+### Accomplished This Week
+- Studied fundamental concepts of analog and digital integrated circuit design (introductory level)
+- Successfully obtained access to the university HPC server  
+  - Configured VPN connection  
+  - Located and verified availability of Cadence tool suite
+- Completed initial familiarization with the Cadence design flow tools, including:
+  - Virtuoso (schematic & layout editing)
+  - Xcelium (logic simulation)
+  - Genus (RTL synthesis)
+  - Innovus (place & route)
+  - Tempus (timing analysis)
+  - Voltus (power integrity analysis)
 
-## Challenge & Blocking points
-    None
+### Key Learnings / Insights
+First exposure to the complete ASIC design flow from RTL to physical implementation and sign-off.  
+Understanding the role of each Cadence tool and their typical usage sequence is essential for the upcoming phases.
 
-## Plan for the Next Week:
-    1. More about ASIC
-    2. How to write an HDL Code
+### Challenges & Blocking Points
+- None encountered during setup and initial exploration
+
+### Plan for Next Week
+- Deepen understanding of ASIC design flow and standard cell-based digital implementation
+- Study basics of Hardware Description Languages (Verilog/SystemVerilog)  
+  → Goal: Write and simulate first simple combinational & sequential circuits by end of week
