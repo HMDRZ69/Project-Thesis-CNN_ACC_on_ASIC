@@ -63,21 +63,22 @@ veriloginitial begin
     #10 a = 1; b = 1;
     #10 $stop;  // Stop simulation
 end
+```
 ### Key Learnings / Insights
 
-Verilog syntax for modules, ports, and continuous assignments is straightforward but requires precise naming and structure
+- Verilog syntax for modules, ports, and continuous assignments is straightforward but requires precise naming and structure
 Running simulations remotely on Linux server (via VS Code) is more reliable than local Windows execution for Cadence tools
 Small naming/structure errors cause compilation failures — careful consistency is critical
 
 ### Challenges & Blocking Points
 
-Code written in VS Code on Windows could not be executed remotely on the university server
+- Code written in VS Code on Windows could not be executed remotely on the university server
 → Solution: Shifted to writing and running code directly via VS Code connected to the university Linux server
-Frequent mistakes in file naming and module/structure definitions
+- Frequent mistakes in file naming and module/structure definitions
 → Solution: Corrected naming conventions and structural format; double-checked port lists and syntax
 
 ### Plan for Next Week
 
-Implement a 1-bit Full-Adder (with carry-in) in Verilog and develop its testbench
-Perform exhaustive simulation and waveform analysis for the Full-Adder
-Review the IHP SG13G2 design rules (focus on standard cell compatibility and basic layout constraints)
+- Implement a 1-bit Full-Adder (with carry-in) in Verilog and develop its testbench
+- Perform exhaustive simulation and waveform analysis for the Full-Adder
+- Review the IHP SG13G2 design rules (focus on standard cell compatibility and basic layout constraints)
