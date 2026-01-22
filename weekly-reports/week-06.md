@@ -17,7 +17,7 @@
 ### Key Learnings / Insights
 - Proper PDK setup is one of the most critical and time-consuming early steps in an ASIC design flow
 - University shared storage layouts can differ significantly from documentation or expected structures
-- Keeping weekly documentation up-to-date prevents knowledge loss and makes progress visible to supervisors
+- Keeping weekly documentation up-to-date prevents knowledge loss and makes progress visible
 
 ### Challenges & Blocking Points
 - Discovered that the top-level `PDK_IHP` directory was empty or incomplete.
