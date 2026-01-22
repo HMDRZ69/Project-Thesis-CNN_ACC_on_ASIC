@@ -4,7 +4,7 @@
 ## What have done this week:
     1. Set up the GitHub repository structure for weekly progress reporting until week 03.
     2. Created and organized the project README to provide an overview and quick access to weekly reports.
-    3. Documented the work completed during the initial weeks of the project.
+    3. Documented the tasks completed during the initial weeks of the project.
 
 ### Results & Outputs
 (https://github.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC)
@@ -21,4 +21,4 @@
 
 ## Plan for the Next Week:
     1. Continue and update the GitHub repository weekly reports.
-    2. Ensure proper access to the SG13G2 PDK on the university server.
+    2. Review and check the PDK Content.
