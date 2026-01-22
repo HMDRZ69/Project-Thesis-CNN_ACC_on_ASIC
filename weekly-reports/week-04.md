@@ -1,47 +1,60 @@
-# Weekly Progress Report - Week 04
-**Date:** 28.11.2025
+# Weekly Progress Report – Week 04  
+**Date:** November 28, 2025
 
-## What have done this week:
-    1. Implemented a Full-Adder along with its associated testbench
-    2. Reviewed the IHP design rules
+### Accomplished This Week
+- Designed and implemented a 1-bit **Full Adder** in Verilog:
+  - Used continuous assignments for sum (3-input XOR) and carry-out logic
+  - Implemented carry-out using majority function: (A&B) | (Cin&(A^B))
+- Developed a testbench for the Full Adder:
+  - Applied selected stimulus patterns covering different carry propagation cases
+  - Used timed delays to observe signal transitions
+- Performed functional simulation using Cadence Xcelium:
+  - Successfully ran simulation and visualized waveforms in SimVision
+  - Verified correct sum and carry-out behavior for tested input combinations
+- Captured simulation results:
+  - Waveform screenshot → `simulation/full_adder_waveform.png`
+  - Block diagram / outline → `simulation/full_adder_outline.png`
+- Reviewed the IHP SG13G2 design rules (basic overview of relevant sections for digital standard-cell design)
 
 ### Results & Outputs
-Successful simulation results
+Successful functional simulation with correct logical behavior observed.
 
-![Full-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_waveform.png)
+![Full-Adder Simulation Waveform](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_waveform.png)  
+*Waveform captured from Cadence Xcelium SimVision. Inputs: A, B, Cin; Outputs: SUM, Cout.*
 
-*Waveform captured from Cadence Xcelium SimVision. Inputs: a, b, cin; Outputs: sum, cout.*
-![Full-Adder Simulation Outline](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_outline.png)
+![Full-Adder Simulation Outline](https://raw.githubusercontent.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/main/simulation/full_adder_outline.png)  
+*High-level block diagram of the Full Adder.*
 
-## Code Script
+### Code Snippets
 **Full-Adder RTL (rtl/fulladder.v):**
-    // Full Code in rtl
+```verilog
+module full_adder(
+    input A, input B, input Cin,
+    output SUM, output Cout
+);
+    assign SUM  = A ^ B ^ Cin;
+    assign Cout = (A & B) | (Cin & (A ^ B));
+endmodule
+Testbench excerpt (simulation/tb_full_adder.v):
+veriloginitial begin
+    A = 0; B = 0; Cin = 0;
+    #10 A = 0; B = 1; Cin = 0;
+    #10 A = 1; B = 0; Cin = 1;
+    #10 A = 1; B = 1; Cin = 1;
+    #10 $stop;
+end
+```
+### Key Learnings / Insights
 
-    module full_adder(
-        input A, input B, input Cin, output SUM, output Cout);
+- Full-Adder logic can be concisely expressed using continuous assignments, making it easy to read and synthesize.
+- Waveform visibility in SimVision depends heavily on proper signal probing and access rights during simulation setup.
 
-        assign SUM = A ^ B ^ Cin;
-        assign Cout = (A & B) | (Cin & (A ^ B));
+### Challenges & Blocking Points
 
-    endmodule
+- SimVision opened correctly after simulation, but no signals were visible in the waveform viewer
+→ Solution: Re-ran the simulation with correct read access permissions for signal values, which resolved the visibility issue
 
-**Testbench (simulation/tb_half_adder.v):**
-    // Full Code in rtl
+### Plan for Next Week
 
-    initial begin
-            A = 0; B = 0; Cin = 0;
-        #10 A = 0; B = 1; Cin = 0;
-        #10 A = 1; B = 0; Cin = 1;
-        #10 A = 1; B = 1; Cin = 1;
-
-        #10 $stop;
-    end
-
-
-## Challenge & Blocking points
-    - SimVision opened correctly, but no signals were visible despite a successful simulation run.
-    - The problem was related to missing read access for signal values.
-    SOLUTION: Re-running the simulation with proper access permissions resolved the issue and enabled waveform visualization.
-
-## Plan for the Next Week:
-    1. Set up the GitHub repository structure for weekly progress reporting.
+- Set up a clear GitHub repository structure optimized for weekly progress reporting
+(folders for rtl/, simulation/, weekly-reports/, docs/, etc.; update README with progress table)
