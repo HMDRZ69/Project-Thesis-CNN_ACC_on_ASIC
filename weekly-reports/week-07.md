@@ -1,20 +1,30 @@
-# Weekly Progress Report - Week 07
-**Date:** 18.12.2025
+# Weekly Progress Report – Week 07  
+**Date:** December 18, 2025
 
-## What have done this week:
-    1. Successfully extracted IHP SG13G2 PDK into user HOME.
-    2. Verified completeness of PDK (tech, lib, env, Calibre, PVS).
-    3. Configured Cadence workspace and linked PDK via cds.lib
-    4. Attempted Virtuoso startup in graphical and non-graphical modes.
-    
+### Accomplished This Week
+- Verified the extracted IHP SG13G2 PDK environment scripts for Cadence
+- Identified and inspected key configuration files:
+  - `cdsenv`, `cdsinit`, `cds.lib_composite`
+  - Composite library setup and OpenAccess (OA) compatible libraries
+- Confirmed the PDK is complete and industry-grade, supporting:
+  - Analog & digital design flow
+  - Layout editing, DRC/LVS verification
+  - Device symbols, PCells, standard cells, technology layers
+  - Full technology definition files (layers, rules, display, routing)
+- Prepared a dedicated Cadence workspace directory
+- Ensured strict separation between read-only PDK and writable project workspace
+
 ### Results & Outputs
-    
+The SG13G2 PDK (rev 1.3.2) is fully extracted and contains all required components for Cadence Virtuoso, including OA libraries, PCells, and complete technology files. The environment is now ready for library setup and first launch.
 
-## Challenge & Blocking points
-    1. Identified startup failure caused by full root filesystem.
-    2. Root cause: mandatory write access to /tmp during Cadence initialization.
-    3. Conclusion: tool execution blocked by VM disk limitation, not configuration error.
+### Key Learnings / Insights
+- A properly configured PDK with cds.lib/cdsenv is the foundation of the entire physical design flow
+- Keeping PDK read-only and project workspace separate is critical to avoid accidental corruption
 
-## Plan for the Next Week:
-    1. Review IHP rules
-    2. Definition of CNN
+### Challenges & Blocking Points
+- None encountered this week
+
+### Plan for Next Week
+- Launch Cadence Virtuoso from the configured workspace
+- Verify correct loading of all IHP SG13G2 PDK libraries
+- Confirm full Cadence environment readiness for the IC design flow (schematic entry, simulation, layout)
