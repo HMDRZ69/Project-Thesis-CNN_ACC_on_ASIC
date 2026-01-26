@@ -1,4 +1,4 @@
-# Basic CNN Accelerator on IHP 130nm Technology
+# Digital Design of a Basic CNN Accelerator on IHP 130nm Technology
 
 **Project Thesis**  
 **Student:** Hamed Ramezan Zadeh  
