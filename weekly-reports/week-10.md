@@ -45,6 +45,7 @@
   - State sequence: `IDLE → CONV1 → CONV2 → POOL → DONE`
   - Generated one-cycle start pulses for convolution and pooling engines
   - Implemented explicit ping-pong buffer swapping logic after each layer
+  - [rtl/controller_fsm.md](../rtl/controller_fsm.md)
 - Ensured strict separation of concerns:
   - Control logic (FSM)
   - Address generation (future module)
@@ -56,7 +57,7 @@
   - Generated clock, reset, start pulse, and artificial `conv_done` / `pool_done` handshaking signals
   - Added internal monitors to track FSM state transitions, layer selection, buffer swapping, and pulse generation
   - Included pulse counters to verify correct assertion counts (`conv_start` ×2, `pool_start` ×1)
-
+  - [rtl/tb_controller_fsm.md](..rtl/tb_controller_fsm.md)
 #### Simulation Execution
 - Ran simulation using **Cadence Xcelium (xrun)** on the university Linux server
 - Final command:
