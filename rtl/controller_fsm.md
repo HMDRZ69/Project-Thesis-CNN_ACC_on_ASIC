@@ -19,7 +19,7 @@
 //   - Registered to avoid combinational glitches.
 // =============================================================================
 
- module controller_fsm (
+module controller_fsm  (
     input  logic clk,
     input  logic rst_n,
 
