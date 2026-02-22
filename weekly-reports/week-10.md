@@ -71,7 +71,7 @@
   - Exact pulse counts: conv_start_cnt=2, pool_start_cnt=1
   - Final done = 1
   - Result: PASS ✓
-
+  ![Waveform](../simulation/controller_fsm_outline.png)
 
 ### Challenges & Debugging
 
