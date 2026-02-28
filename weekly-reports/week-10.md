@@ -4,6 +4,7 @@
 ---
 ### Accomplished This Week
 #### CNN Architecture & System-Level Design
+This week focused exclusively on implementing and fully verifying the address generation module. Integration and memory modeling are deferred to the following week.
 - Finalized the project scope and design assumptions:
   - CNN accelerator implemented solely to validate the ASIC digital design flow (RTL → Simulation → Synthesis → P&R → Post-Layout)
   - Explicitly excluded dataset handling, training, inference accuracy evaluation, and external memory interfaces
@@ -94,12 +95,7 @@
 - Cadence tools strictly enforce single-driver rule for always_ff; declaration init counts as a driver
 
 ### Plan for Next Week
-
-- Design and implement the Address Generation (addr_gen) module:
-  - Nested loop structure for spatial, kernel, and channel dimensions
-  - SRAM read/write address generation
-  - Padding handling via address logic
 - Integrate addr_gen with controller_fsm
 - Begin behavioral modeling of feature SRAMs (A/B)
 - Prepare interfaces and testbench extensions for convolution engine integration
-- Extend simulation environment incrementally toward full datapath verification
+- Add synthesis-safety cleanup
