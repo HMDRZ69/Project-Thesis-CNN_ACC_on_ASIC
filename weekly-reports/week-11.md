@@ -66,7 +66,7 @@
 - Race conditions in testbench aggregate counters  
   → **Solution:** Used careful posedge-based monitoring and synchronized sampling
 
-### Plan for Next Week (Week 12)
+### Plan for Next Week 
 - Integrate `addr_gen` module with `controller_fsm`
 - Implement behavioral models for Feature SRAM A/B (ping-pong banks)
 - Begin subsystem-level integration testing (controller + address generation + SRAM models)
