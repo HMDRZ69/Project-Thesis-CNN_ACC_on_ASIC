@@ -45,8 +45,8 @@
 - Ping-pong bank selection and write path now correctly driven by real interface signals (not dummies)
 - System-level simulation confirms correct sequencing through all layers (Conv1 → Conv2 → POOL stub → DONE)
 - Current architecture provides a robust foundation for real datapath implementation  
-![Waveform](../simulation/cnn_top.png)
-![Waveform](../simulation/conv_engine_stub.png)
+[cnn_top.png](../simulation/cnn_top.png)    
+[conv_engine_stub.png](../simulation/conv_engine_stub.png)
 
 ### Current Architecture Status (End of Week 12)
 
