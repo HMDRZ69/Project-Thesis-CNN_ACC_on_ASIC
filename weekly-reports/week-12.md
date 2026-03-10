@@ -76,7 +76,7 @@
 - None significant this week — integration progressed smoothly thanks to prior module-level verification and clear interface definition
 
 ### Plan for Next Week (Week 13)
-- Design and implement the real **Convolution Engine** (`conv_engine.sv`):
+- The next stage of the project will focus on implementing the RTL of the **conv_engine module**, replacing the temporary stub with a real datapath implementation:
   - 4-lane parallel MAC array
   - Multiplier units for activation–weight products
   - Adder tree for partial sum accumulation
