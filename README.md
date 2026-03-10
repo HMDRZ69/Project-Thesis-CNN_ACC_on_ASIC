@@ -37,8 +37,8 @@ Activations: 8-bit unsigned | Weights: 8-bit signed | Accumulator: 32-bit
 | 05   | 2025-12-05    | GitHub repo structure, README & documentation cleanup       | [week-05.md](weekly-reports/week-05.md)          |
 | 06   | 2025-12-12    | SG13G2 PDK verification & local extraction attempts         | [week-06.md](weekly-reports/week-06.md)          |
 | 07   | 2025-12-18    | PDK environment scripts, workspace & OA library setup       | [week-07.md](weekly-reports/week-07.md)          |
-| 08   | 2025-12-25    | Virtuoso launch debugging & VM disk space resolution        | [week-08.md](weekly-reports/week-08.md)          |
-| 09   | 2026-01-18    | PDK library linkage fixes → Virtuoso Library Manager ready  | [week-09.md](weekly-reports/week-09.md)          |
+| 08   | 2025-12-25    | Cadence launch debugging & VM disk space resolution         | [week-08.md](weekly-reports/week-08.md)          |
+| 09   | 2026-01-18    | PDK library linkage fixes → Cadence Library Manager ready   | [week-09.md](weekly-reports/week-09.md)          |
 | 10   | 2026-02-08    | Final CNN architecture, top-level FSM RTL & simulation      | [week-10.md](weekly-reports/week-10.md)          |
 | 11   | 2026-02-22    | Address Generation (`addr_gen`) RTL & full verification     | [week-11.md](weekly-reports/week-11.md)          |
 | 12   | 2026-03-??    | Top-level integration (`cnn_top`), conv_engine interface & stub | [week-12.md](weekly-reports/week-12.md)          |
