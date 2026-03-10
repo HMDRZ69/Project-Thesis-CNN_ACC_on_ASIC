@@ -1,6 +1,6 @@
 # Digital Design of a Basic CNN Accelerator on an ASIC in IHP 130nm Technology
 
-**Project / Master's Thesis**  
+**Project / Master's Project Thesis**  
 **Student:** Hamed Ramezan Zadeh  
 **Supervisor:** Prof. Dr. Florian Ashauer  
 **Start Date:** November 2025
