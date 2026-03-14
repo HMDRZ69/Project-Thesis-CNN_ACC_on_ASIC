@@ -46,9 +46,9 @@
 - Control flow and datapath operation confirmed across multiple accelerator runs
 - [simulation/cnn_top_integration_verified.png](../simulation/cnn_top_integration_verified.png)
 - [simulation/full_system_integration.png](../simulation/full_system_integration.png)
-- [rtl/cnn_top_integration.sim.log](../rtl/cnn_top_integration.sim.log)
-- [rtl/full_system_integration.sim.log](../rtl/full_system_integration.sim.log)
-- [rtl/pool_engine.sim.log](../rtl/pool_engine.sim.log)
+- [rtl/cnn_top_integration_sim.log](../rtl/cnn_top_integration.sim.log)
+- [rtl/full_system_integration_sim.log](../rtl/full_system_integration.sim.log)
+- [rtl/pool_engine.sim_log](../rtl/pool_engine.sim.log)
 
 ### Current Architecture Status (End of Week 13)
 
