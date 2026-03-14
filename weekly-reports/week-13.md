@@ -1,5 +1,5 @@
 # Weekly Progress Report – Week 13  
-**Date:** March 1, 2026
+**Date:** March 14, 2026
 
 ### Accomplished This Week
 - Replaced the temporary `conv_engine_stub` with the full RTL implementation of the **Convolution Engine** (`conv_engine.sv`):
@@ -27,15 +27,15 @@
   - Confirmed correct sequencing, pixel counts (Conv1: 4096, Conv2: 8192), restart behavior
 
 ### RTL Code Snippets
-- [rtl/conv_engine.sv](../rtl/conv_engine.sv)
-- [rtl/pool_engine.sv](../rtl/pool_engine.sv)
-- [rtl/cnn_top.sv](../rtl/cnn_top.sv)
-- [rtl/controller_fsm.sv](../rtl/controller_fsm.sv)
-- [rtl/addr_gen.sv](../rtl/addr_gen.sv)
-- [rtl/weight_rom.sv](../rtl/weight_rom.sv)
-- [rtl/tb_conv_engine.sv](../rtl/tb_conv_engine.sv)
-- [rtl/tb_cnn_top.sv](../rtl/tb_cnn_top.sv)
-- [rtl/tb_pool_engine.sv](../rtl/tb_pool_engine.sv)
+- [conv_engine.sv](../rtl/conv_engine.sv)
+- [pool_engine.sv](../rtl/pool_engine.sv)
+- [cnn_top.sv](../rtl/cnn_top.sv)
+- [controller_fsm.sv](../rtl/controller_fsm.sv)
+- [addr_gen.sv](../rtl/addr_gen.sv)
+- [weight_rom.sv](../rtl/weight_rom.sv)
+- [tb_conv_engine.sv](../rtl/tb_conv_engine.sv)
+- [tb_cnn_top.sv](../rtl/tb_cnn_top.sv)
+- [tb_pool_engine.sv](../rtl/tb_pool_engine.sv)
 
 ### Results & Outputs
 - conv_engine fully implemented with real MAC datapath
@@ -45,10 +45,10 @@
 - Convolution layers produce expected output pixel counts
 - Control flow and datapath operation confirmed across multiple accelerator runs
 - [cnn_top_integration_verified.png](../simulation/cnn_top_integration_verified.png)
-- [full_system_integration.png](../simulation/full-system integration.png)
-- [rtl/cnn_top_integration.sim.log](../rtl/cnn_top_integration.sim.log)
-- [rtl/full_system_integration.sim.log](../rtl/full_system_integration.sim.log)
-- [rtl/pool_engine.sim.log](../rtl/pool_engine.sim.log)
+- [full_system_integration.png](../simulation/full_system_integration.png)
+- [cnn_top_integration.sim.log](../rtl/cnn_top_integration.sim.log)
+- [full_system_integration.sim.log](../rtl/full_system_integration.sim.log)
+- [pool_engine.sim.log](../rtl/pool_engine.sim.log)
 
 ### Current Architecture Status (End of Week 13)
 
