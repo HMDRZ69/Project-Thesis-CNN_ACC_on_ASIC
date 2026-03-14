@@ -72,13 +72,13 @@
 - Incremental debugging of datapath modules simplifies root-cause analysis
 
 ### Challenges & Blocking Points
-- Initial mismatches in pooling unit testbench due to incorrect max-selection comparator logic  
+- Initial mismatches in pooling unit testbench due to incorrect max-selection comparator logic.  
   → **Solution:** Fixing the max-selection comparison logic and validating it with multiple test patterns in tb_pool_engine. 
-- Incorrect write address progression in the convolution engine caused unit test failures 
+- Incorrect write address progression in the convolution engine caused unit test failures.   
   → **Solution:** Correcting the out_wr_addr update logic so that the write address increments only when conv_out_valid is asserted.
-- Early system-level simulations produced incorrect output counts due to improper output-enable timing 
+- Early system-level simulations produced incorrect output counts due to improper output-enable timing.  
   → **Solution:** Modifying addr_gen so that out_enable is asserted only for the final MAC group of each output pixel.
-- Integration instability during early datapath replacement (stub → real RTL) risked breaking the top-level pipeline 
+- Integration instability during early datapath replacement (stub → real RTL) risked breaking the top-level pipeline.  
   → **Solution:** Performing incremental verification with unit testbenches before running full-system simulations.
 
 ### Plan for Next Week (Week 14)
