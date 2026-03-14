@@ -37,16 +37,19 @@ module feature_sram_model #(
     // Elaboration-time parameter consistency check
     // Using if/$fatal instead of assert...else for Xcelium compatibility
     // -------------------------------------------------------------------------
+    `ifndef SYNTHESIS
     initial begin
         if (2**ADDR_W != DEPTH)
             $fatal(1, "feature_sram_model: ADDR_W=%0d implies depth %0d but DEPTH=%0d. Parameters are inconsistent.", ADDR_W, 2**ADDR_W, DEPTH);
     end
+    `endif
 
     // -------------------------------------------------------------------------
     // Memory array — initialised to 0x00
     // -------------------------------------------------------------------------
     logic [7:0] mem [0:DEPTH-1];
 
+    `ifndef SYNTHESIS
     initial begin
         for (int i = 0; i < DEPTH; i++)
             mem[i] = 8'h00;
@@ -56,7 +59,8 @@ module feature_sram_model #(
         // The always_ff block drives rd_data to 8'h00 whenever rd_en=0,
         // so stale values will never propagate after the first clock edge.
     end
-
+    `endif
+    
     // -------------------------------------------------------------------------
     // Synchronous read/write — write-before-read priority
     // -------------------------------------------------------------------------

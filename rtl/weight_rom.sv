@@ -32,11 +32,13 @@ module weight_rom #(
     // Elaboration-time check: index width must cover Conv1 + Conv2 weight count
     // Conv1: 4*1*9 = 36, Conv2: 8*4*9 = 288, total = 324 → needs ceil(log2(324))=9
     // -------------------------------------------------------------------------
+    `ifndef SYNTHESIS
     initial begin
         if (ADDR_W < 9)
             $fatal(1, "weight_rom: ADDR_W=%0d is too narrow. Need at least 9 bits to address 324 weights.", ADDR_W);
     end
-
+    `endif
+    
     // -------------------------------------------------------------------------
     // Combinational ROM — pure lookup, no clock needed
     // -------------------------------------------------------------------------

@@ -1,0 +1,312 @@
+// =============================================================================
+// Module  : tb_cnn_top.sv
+// Project : CNN Accelerator — IHP 130nm ASIC (MSc Project Thesis)
+// Purpose : Full-system integration testbench for cnn_top.sv
+//
+// Changes vs stub version:
+//   - pool_stub_armed / pool_stub_fired / force / release removed entirely.
+//     pool_engine is now instantiated in cnn_top; pool_done is a real signal.
+//   - run_cnn() no longer needs to arm/disarm a stub.
+//   - All other checks (pixel counts, done level, ping-pong, watchdog) kept.
+//
+// Cycle budget (10 ns clock):
+//   Conv1: 4096 pixels x  ~6 cycles =  ~24 576 cycles ~  245 760 ns
+//   Conv2: 8192 pixels x ~12 cycles =  ~98 304 cycles ~  983 040 ns
+//   Pool:   512 pixels x   7 cycles =    3 584 cycles ~   35 840 ns
+//   FSM + overhead                   ~      60 cycles
+//   Total per run                    ~ 126 600 cycles ~ 1 266 000 ns
+//   Watchdog (4x margin, 2 runs)     =  10 000 000 ns
+// =============================================================================
+
+`timescale 1ns/1ps
+`default_nettype none
+
+module tb_cnn_top;
+
+    // =========================================================================
+    // DUT connections
+    // =========================================================================
+    logic clk;
+    logic rst_n;
+    logic start;
+    logic done;
+
+    cnn_top u_dut (
+        .clk  (clk),
+        .rst_n(rst_n),
+        .start(start),
+        .done (done)
+    );
+
+    // =========================================================================
+    // Clock — 100 MHz (10 ns period)
+    // =========================================================================
+    localparam int CLK_HALF = 5;
+    initial clk = 1'b0;
+    always #(CLK_HALF) clk = ~clk;
+
+    // =========================================================================
+    // Watchdog — 10 000 000 ns (4x margin for 2 runs)
+    // =========================================================================
+    initial begin
+        #10_000_000;
+        $fatal(1, "[TB] WATCHDOG TIMEOUT at t=%0t ns", $time);
+    end
+
+    // =========================================================================
+    // Hierarchical signal aliases (READ-ONLY — never driven from TB)
+    // =========================================================================
+    wire        tb_conv_start = u_dut.conv_start;
+    wire        tb_pool_start = u_dut.pool_start;
+    wire        tb_layer_sel  = u_dut.layer_sel;
+    wire        tb_ag_enable  = u_dut.ag_enable;
+    wire        tb_layer_done = u_dut.layer_done;
+    wire        tb_mac_valid  = u_dut.mac_valid;
+    wire        tb_conv_out_v = u_dut.conv_out_valid;
+    wire [7:0]  tb_conv_out_d = u_dut.conv_out_data;
+    wire        tb_src_sel    = u_dut.src_sel;
+    wire        tb_dst_sel    = u_dut.dst_sel;
+
+    // =========================================================================
+    // Expected pixel counts
+    // =========================================================================
+    localparam int CONV1_PIXELS = 4 * 32 * 32;   // 4096
+    localparam int CONV2_PIXELS = 8 * 32 * 32;   // 8192
+
+    // =========================================================================
+    // Pixel counters
+    // Rule: ONLY always_ff drives conv1/conv2_pixel_count (no task writes)
+    // Task drives cnt_reset HIGH for 1 cycle to synchronously clear counters.
+    // =========================================================================
+    logic        cnt_reset;          // 1-cycle strobe from task
+    logic [31:0] conv1_pixel_count;
+    logic [31:0] conv2_pixel_count;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n || cnt_reset) begin
+            conv1_pixel_count <= 32'd0;
+            conv2_pixel_count <= 32'd0;
+        end else if (tb_conv_out_v) begin
+            if (!tb_layer_sel)
+                conv1_pixel_count <= conv1_pixel_count + 1;
+            else
+                conv2_pixel_count <= conv2_pixel_count + 1;
+        end
+    end
+
+    // =========================================================================
+    // Check helpers
+    // =========================================================================
+    int pass_count;
+    int fail_count;
+
+    task automatic check_int(input string lbl, input int got, input int exp);
+        if (got === exp) begin
+            $display("[PASS] %-44s got=%0d expected=%0d t=%0t ns",
+                     lbl, got, exp, $time);
+            pass_count++;
+        end else begin
+            $display("[FAIL] %-44s got=%0d expected=%0d t=%0t ns",
+                     lbl, got, exp, $time);
+            fail_count++;
+        end
+    endtask
+
+    task automatic check_bit(input string lbl, input logic got, input logic exp);
+        if (got === exp) begin
+            $display("[PASS] %-44s got=%0b expected=%0b t=%0t ns",
+                     lbl, got, exp, $time);
+            pass_count++;
+        end else begin
+            $display("[FAIL] %-44s got=%0b expected=%0b t=%0t ns",
+                     lbl, got, exp, $time);
+            fail_count++;
+        end
+    endtask
+
+    // =========================================================================
+    // Primitive tasks
+    // =========================================================================
+
+    task automatic reset_dut();
+        rst_n     = 1'b0;
+        start     = 1'b0;
+        cnt_reset = 1'b0;
+        repeat(8) @(posedge clk); #1;
+        rst_n = 1'b1;
+        @(posedge clk); #1;
+        $display("[TB] Reset released at t=%0t ns", $time);
+    endtask
+
+    task automatic clear_state();
+        @(posedge clk); #1;
+        cnt_reset = 1'b1;
+        @(posedge clk); #1;
+        cnt_reset = 1'b0;
+        @(posedge clk); #1;
+    endtask
+
+    task automatic pulse_start();
+        @(posedge clk); #1;
+        start = 1'b1;
+        @(posedge clk); #1;
+        start = 1'b0;
+        $display("[TB] start pulsed at t=%0t ns", $time);
+    endtask
+
+    task automatic wait_for_done(input int timeout_cycles);
+        int cyc;
+        cyc = 0;
+        while (done !== 1'b1) begin
+            @(posedge clk); #1;
+            cyc++;
+            if (cyc >= timeout_cycles)
+                $fatal(1, "[TB] wait_for_done: timeout after %0d cycles t=%0t ns",
+                       timeout_cycles, $time);
+        end
+        $display("[TB] done asserted at t=%0t ns (after %0d cycles)", $time, cyc);
+    endtask
+
+    // =========================================================================
+    // run_cnn — one complete Conv1 → Conv2 → Pool → Done sequence
+    // No stub logic needed: pool_engine is real hardware inside cnn_top.
+    // =========================================================================
+    task automatic run_cnn(input int run_id);
+        $display("============================================================");
+        $display("[TB] RUN %0d starting at t=%0t ns", run_id, $time);
+        $display("============================================================");
+
+        // Step 1: clear pixel counters
+        clear_state();
+
+        // Step 2: pulse start — FSM exits S_IDLE (Run1) or S_DONE (Run2)
+        pulse_start();
+
+        // Step 3: wait for done — conv layers + pool must all complete
+        // 200 000 cycles >> ~126 600 expected; watchdog provides hard ceiling
+        wait_for_done(200_000);
+
+        // Step 4: pixel count checks
+        $display("[TB] RUN %0d done. conv1=%0d (exp=%0d) conv2=%0d (exp=%0d)",
+                 run_id,
+                 conv1_pixel_count, CONV1_PIXELS,
+                 conv2_pixel_count, CONV2_PIXELS);
+        check_int($sformatf("R%0d: Conv1 pixel count", run_id),
+                  int'(conv1_pixel_count), CONV1_PIXELS);
+        check_int($sformatf("R%0d: Conv2 pixel count", run_id),
+                  int'(conv2_pixel_count), CONV2_PIXELS);
+
+        // Step 5: done must be HIGH right now (FSM in S_DONE, done=1 as level)
+        check_bit($sformatf("R%0d: done HIGH at completion", run_id),
+                  done, 1'b1);
+
+        // Step 6: done stays HIGH in S_DONE (no start pulsed yet)
+        repeat(10) @(posedge clk); #1;
+        check_bit($sformatf("R%0d: done stays HIGH in S_DONE (10 cyc)", run_id),
+                  done, 1'b1);
+
+        // Step 7: ping-pong sanity — neither src_sel nor dst_sel must be X
+        if (tb_src_sel === 1'bx || tb_dst_sel === 1'bx) begin
+            $display("[FAIL] R%0d: ping-pong X  src=%b dst=%b  t=%0t ns",
+                     run_id, tb_src_sel, tb_dst_sel, $time);
+            fail_count++;
+        end else begin
+            $display("[PASS] R%0d: ping-pong src=%0b dst=%0b (no X)  t=%0t ns",
+                     run_id, tb_src_sel, tb_dst_sel, $time);
+            pass_count++;
+        end
+
+        $display("[TB] RUN %0d COMPLETE at t=%0t ns", run_id, $time);
+        $display("------------------------------------------------------------");
+    endtask
+
+    // =========================================================================
+    // Progress ticker — 1 line per 1000 conv_out_valid pulses
+    // =========================================================================
+    int total_out_valid_count;
+    initial total_out_valid_count = 0;
+
+    always @(posedge clk) begin
+        if (u_dut.conv_out_valid) begin
+            total_out_valid_count++;
+            if ((total_out_valid_count % 1000) == 0)
+                $display("[TB] Progress: %0d conv_out_valid total  layer=%0b  t=%0t ns",
+                         total_out_valid_count, tb_layer_sel, $time);
+        end
+    end
+
+    // =========================================================================
+    // X/Z data monitor — warn if conv_out_data contains X when out_valid=1
+    // =========================================================================
+    always @(posedge clk) begin
+        if (rst_n && u_dut.conv_out_valid && (^tb_conv_out_d === 1'bx))
+            $display("[WARN] conv_out_data=X (0x%02h) when out_valid=1  t=%0t ns",
+                     tb_conv_out_d, $time);
+    end
+
+    // =========================================================================
+    // Main test sequence
+    // =========================================================================
+    initial begin
+        pass_count = 0;
+        fail_count = 0;
+
+        $display("============================================================");
+        $display("[TB] tb_cnn_top — full-system integration testbench");
+        $display("[TB] Conv1=%0d pixels | Conv2=%0d pixels | 100 MHz",
+                 CONV1_PIXELS, CONV2_PIXELS);
+        $display("============================================================");
+
+        // ---------------------------------------------------------------
+        // Hard reset
+        // ---------------------------------------------------------------
+        reset_dut();
+
+        // Post-reset signal checks
+        @(posedge clk); #1;
+        check_bit("POST_RESET: done=0",           done,         1'b0);
+        check_bit("POST_RESET: conv_start=0",     tb_conv_start,1'b0);
+        check_bit("POST_RESET: ag_enable=0",      tb_ag_enable, 1'b0);
+        check_bit("POST_RESET: mac_valid=0",      tb_mac_valid, 1'b0);
+        check_bit("POST_RESET: conv_out_valid=0", tb_conv_out_v,1'b0);
+        check_bit("POST_RESET: layer_done=0",     tb_layer_done,1'b0);
+
+        // ---------------------------------------------------------------
+        // RUN 1
+        // ---------------------------------------------------------------
+        run_cnn(1);
+
+        // Brief idle — verify done stays HIGH in S_DONE without a new start
+        repeat(20) @(posedge clk); #1;
+        check_bit("INTER_RUN: done HIGH in S_DONE (20 cyc idle)", done, 1'b1);
+
+        // ---------------------------------------------------------------
+        // RUN 2 — restart from S_DONE, no rst_n
+        // ---------------------------------------------------------------
+        run_cnn(2);
+
+        // Post-run idle
+        repeat(10) @(posedge clk); #1;
+        check_bit("POST_RUN2: done HIGH in S_DONE (no restart)", done, 1'b1);
+
+        // ---------------------------------------------------------------
+        // Final summary
+        // ---------------------------------------------------------------
+        $display("============================================================");
+        $display("[TB] RESULTS: %0d PASSED, %0d FAILED", pass_count, fail_count);
+        $display("============================================================");
+
+        if (fail_count > 0)
+            $fatal(1, "[TB] SIMULATION FAILED — %0d test(s) failed", fail_count);
+        else
+            $display("[TB] ALL TESTS PASSED — cnn_top integration verified OK");
+
+        $finish;
+    end
+
+endmodule : tb_cnn_top
+
+`default_nettype wire
+// =============================================================================
+// End of tb_cnn_top.sv
+// =============================================================================

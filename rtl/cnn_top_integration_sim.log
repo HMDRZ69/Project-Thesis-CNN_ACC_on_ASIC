@@ -1,0 +1,380 @@
+xrun(64): 24.03-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s004: Started on Mar 12, 2026 at 17:28:29 CET
+xrun
+	controller_fsm.sv
+	addr_gen.sv
+	feature_sram.sv
+	weight_rom.sv
+	conv_engine.sv
+	cnn_top.sv
+	tb_cnn_top.sv
+	-l sim.log
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+Recompiling... reason: file './cnn_top.sv' is newer than expected.
+	expected: Thu Mar 12 13:49:39 2026
+	actual:   Thu Mar 12 17:25:31 2026
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xmvlog: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xmvlog: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xmvlog: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xmvlog: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xmvlog: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xmvlog: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xmvlog: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+file: addr_gen.sv
+    input  logic        clk,
+                          |
+xmvlog: *W,NODNTW (addr_gen.sv,38|26): Implicit net port (clk) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+    input  logic        rst_n,
+                            |
+xmvlog: *W,NODNTW (addr_gen.sv,39|28): Implicit net port (rst_n) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+    input  logic        enable,      // 1 => run address generation
+                             |
+xmvlog: *W,NODNTW (addr_gen.sv,41|29): Implicit net port (enable) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+    input  logic        layer_sel,   // 0: Conv1 (Cin=1,Cout=4)  1: Conv2 (Cin=4,Cout=8)
+                                |
+xmvlog: *W,NODNTW (addr_gen.sv,42|32): Implicit net port (layer_sel) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+file: conv_engine.sv
+	module worklib.conv_engine:sv
+		errors: 0, warnings: 0
+file: cnn_top.sv
+    input  logic clk,
+                   |
+xmvlog: *W,NODNTW (cnn_top.sv,32|19): Implicit net port (clk) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+    input  logic rst_n,
+                     |
+xmvlog: *W,NODNTW (cnn_top.sv,33|21): Implicit net port (rst_n) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+    input  logic start,
+                     |
+xmvlog: *W,NODNTW (cnn_top.sv,34|21): Implicit net port (start) is not allowed since `default_nettype is declared as 'none'; 'wire' used instead [19.2(IEEE 2001)].
+	module worklib.cnn_top:sv
+		errors: 0, warnings: 3
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 7
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xrun: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xrun: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xmelab: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xmelab: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xmelab: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xmelab: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xmelab: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xmelab: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xmelab: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_cnn_top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xmvlog_cg: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xmvlog_cg: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xmvlog_cg: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xmvlog_cg: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xmvlog_cg: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xmvlog_cg: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xmvlog_cg: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+		worklib.tb_cnn_top:sv <0x5a8e49b0>
+			streams:  33, words: 51383
+		worklib.conv_engine:sv <0x6f7edd87>
+			streams:  13, words:  4091
+		worklib.cnn_top:sv <0x47867076>
+			streams:  47, words: 15655
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                11       7
+		Registers:             130     124
+		Scalar wires:           54       -
+		Vectored wires:         53       -
+		Always blocks:          28      24
+		Initial blocks:         13       8
+		Cont. assignments:      30      30
+		Pseudo assignments:     38       -
+		Process Clocks:         10       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_cnn_top:sv
+ASSIGN mixSig DISPLAY CadenceLib
+|
+xmsim: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,14): cds.lib Library not defined 'mixSig' (cds.lib command ignored).
+ASSIGN spectreHDL DISPLAY CadenceLib
+|
+xmsim: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,15): cds.lib Library not defined 'spectreHDL' (cds.lib command ignored).
+ASSIGN corners DISPLAY CadenceLib
+|
+xmsim: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,16): cds.lib Library not defined 'corners' (cds.lib command ignored).
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib
+|
+xmsim: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,22): cds.lib Invalid environment variable ''.
+ASSIGN SG13_Example DISPLAY PDKlib
+|
+xmsim: *W,DLCLIB (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,31): cds.lib Library not defined 'SG13_Example' (cds.lib command ignored).
+SOFTINCLUDE ${PROJECT}/cds/modules.lib
+|
+xmsim: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/env/cds.lib_composite,51): cds.lib Invalid environment variable ''.
+SOFTINCLUDE ${AMSHOME}/tools/inca/files/cds.lib_plain
+|
+xmsim: *W,DLCVAR (/home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/work/skel/cds/cds.lib,6): cds.lib Invalid environment variable ''.
+Loading snapshot worklib.tb_cnn_top:sv .................... Done
+xcelium> source /eda/cadence/2024-25/RHELx86/XCELIUM_24.03.004/tools/xcelium/files/xmsimrc
+xcelium> run
+============================================================
+[TB] tb_cnn_top — full-system integration testbench
+[TB] Conv1=4096 pixels | Conv2=8192 pixels | 100 MHz
+============================================================
+[TB] Reset released at t=86000 ns
+[PASS] POST_RESET: done=0                           got=0 expected=0 t=96000 ns
+[PASS] POST_RESET: conv_start=0                     got=0 expected=0 t=96000 ns
+[PASS] POST_RESET: ag_enable=0                      got=0 expected=0 t=96000 ns
+[PASS] POST_RESET: mac_valid=0                      got=0 expected=0 t=96000 ns
+[PASS] POST_RESET: conv_out_valid=0                 got=0 expected=0 t=96000 ns
+[PASS] POST_RESET: layer_done=0                     got=0 expected=0 t=96000 ns
+============================================================
+[TB] RUN 1 starting at t=96000 ns
+============================================================
+[TB] start pulsed at t=156000 ns
+[TB] Progress: 1000 conv_out_valid total  layer=0  t=60195000 ns
+[TB] Progress: 2000 conv_out_valid total  layer=0  t=120195000 ns
+[TB] Progress: 3000 conv_out_valid total  layer=0  t=180195000 ns
+[TB] Progress: 4000 conv_out_valid total  layer=0  t=240195000 ns
+[TB] Progress: 5000 conv_out_valid total  layer=1  t=354475000 ns
+[TB] Progress: 6000 conv_out_valid total  layer=1  t=474475000 ns
+[TB] Progress: 7000 conv_out_valid total  layer=1  t=594475000 ns
+[TB] Progress: 8000 conv_out_valid total  layer=1  t=714475000 ns
+[TB] Progress: 9000 conv_out_valid total  layer=1  t=834475000 ns
+[TB] Progress: 10000 conv_out_valid total  layer=1  t=954475000 ns
+[TB] Progress: 11000 conv_out_valid total  layer=1  t=1074475000 ns
+[TB] Progress: 12000 conv_out_valid total  layer=1  t=1194475000 ns
+[TB] pool_done forced HIGH at t=1229045000 ns
+[WARN] cnn_top t=1229045000: pool_start asserted — pool_done must be driven by testbench stub.
+[TB] done asserted at t=1229046000 ns (after 122889 cycles)
+[TB] RUN 1 done. conv1=4096 (exp=4096) conv2=8192 (exp=8192)
+[PASS] R1: Conv1 pixel count                        got=4096 expected=4096 t=1229046000 ns
+[PASS] R1: Conv2 pixel count                        got=8192 expected=8192 t=1229046000 ns
+[PASS] R1: done HIGH at completion                  got=1 expected=1 t=1229046000 ns
+[PASS] R1: done stays HIGH in S_DONE (10 cyc)       got=1 expected=1 t=1229146000 ns
+[PASS] R1: ping-pong src=0 dst=1 (no X)  t=1229146000 ns
+[TB] RUN 1 COMPLETE at t=1229156000 ns
+------------------------------------------------------------
+[PASS] INTER_RUN: done HIGH in S_DONE (20 cyc idle) got=1 expected=1 t=1229356000 ns
+============================================================
+[TB] RUN 2 starting at t=1229356000 ns
+============================================================
+[TB] start pulsed at t=1229416000 ns
+[TB] Progress: 13000 conv_out_valid total  layer=0  t=1272175000 ns
+[TB] Progress: 14000 conv_out_valid total  layer=0  t=1332175000 ns
+[TB] Progress: 15000 conv_out_valid total  layer=0  t=1392175000 ns
+[TB] Progress: 16000 conv_out_valid total  layer=0  t=1452175000 ns
+[TB] Progress: 17000 conv_out_valid total  layer=1  t=1549175000 ns
+[TB] Progress: 18000 conv_out_valid total  layer=1  t=1669175000 ns
+[TB] Progress: 19000 conv_out_valid total  layer=1  t=1789175000 ns
+[TB] Progress: 20000 conv_out_valid total  layer=1  t=1909175000 ns
+[TB] Progress: 21000 conv_out_valid total  layer=1  t=2029175000 ns
+[TB] Progress: 22000 conv_out_valid total  layer=1  t=2149175000 ns
+[TB] Progress: 23000 conv_out_valid total  layer=1  t=2269175000 ns
+[TB] Progress: 24000 conv_out_valid total  layer=1  t=2389175000 ns
+[TB] pool_done forced HIGH at t=2458305000 ns
+[WARN] cnn_top t=2458305000: pool_start asserted — pool_done must be driven by testbench stub.
+[TB] done asserted at t=2458306000 ns (after 122889 cycles)
+[TB] RUN 2 done. conv1=4096 (exp=4096) conv2=8192 (exp=8192)
+[PASS] R2: Conv1 pixel count                        got=4096 expected=4096 t=2458306000 ns
+[PASS] R2: Conv2 pixel count                        got=8192 expected=8192 t=2458306000 ns
+[PASS] R2: done HIGH at completion                  got=1 expected=1 t=2458306000 ns
+[PASS] R2: done stays HIGH in S_DONE (10 cyc)       got=1 expected=1 t=2458406000 ns
+[PASS] R2: ping-pong src=0 dst=1 (no X)  t=2458406000 ns
+[TB] RUN 2 COMPLETE at t=2458416000 ns
+------------------------------------------------------------
+[PASS] POST_RUN2: done HIGH in S_DONE (no restart)  got=1 expected=1 t=2458516000 ns
+============================================================
+[TB] RESULTS: 18 PASSED, 0 FAILED
+============================================================
+[TB] ALL TESTS PASSED — cnn_top integration verified OK
+Simulation complete via $finish(1) at time 2458516 NS + 0
+./tb_cnn_top.sv:361         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s004: Exiting on Mar 12, 2026 at 17:28:31 CET  (total: 00:00:02)
