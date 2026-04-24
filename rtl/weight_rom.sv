@@ -21,6 +21,9 @@
 //   ADDR_W : index bus width (default 9 — supports 0..511, covers max 324)
 // =============================================================================
 
+`timescale 1ns/1ps
+`default_nettype none
+
 module weight_rom #(
     parameter int ADDR_W = 9    // 9 bits covers max index 323 (Conv2 last weight)
 )(
@@ -43,7 +46,7 @@ module weight_rom #(
     // Combinational ROM — pure lookup, no clock needed
     // -------------------------------------------------------------------------
     always_comb begin
-        case (index)
+        unique0 case (index)
             // -----------------------------------------------------------------
             // Conv1 weights (index 0..8): oc=0, ic=0, k=0..8
             // 3x3 kernel — simple edge-detect placeholder
@@ -94,4 +97,9 @@ module weight_rom #(
         endcase
     end
 
-endmodule
+endmodule : weight_rom
+
+`default_nettype wire
+// =============================================================================
+// End of weight_rom.sv
+// =============================================================================

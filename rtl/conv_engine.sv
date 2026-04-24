@@ -185,7 +185,7 @@ module conv_engine #(
     // =========================================================================
     // Simulation-only checks
     // =========================================================================
-    `ifdef SIMULATION
+    `ifndef SYNTHESIS
     always_ff @(posedge clk) begin : sim_checks
         if (rst_n && pixel_done_d1) begin
             if (acc_reg > 32'sh0000_00FF)

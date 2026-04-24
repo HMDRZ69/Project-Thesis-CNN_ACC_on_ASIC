@@ -20,6 +20,7 @@
 // =============================================================================
 
 `timescale 1ns/1ps
+`default_nettype none
 
 module controller_fsm (
     input  logic clk,
@@ -177,4 +178,9 @@ module controller_fsm (
         end
     end
 
-endmodule
+endmodule : controller_fsm
+
+`default_nettype wire
+// =============================================================================
+// End of controller_fsm.sv
+// =============================================================================

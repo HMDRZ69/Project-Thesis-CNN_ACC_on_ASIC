@@ -17,6 +17,7 @@
 // =============================================================================
 
 `timescale 1ns/1ps
+`default_nettype none
 
 module feature_sram_model #(
     parameter int DEPTH  = 8192,
@@ -89,4 +90,9 @@ module feature_sram_model #(
 
     end
 
-endmodule
+endmodule : feature_sram_model
+
+`default_nettype wire
+// =============================================================================
+// End of feature_sram_model.sv
+// =============================================================================

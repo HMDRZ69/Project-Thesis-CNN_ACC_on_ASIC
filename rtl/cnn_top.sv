@@ -385,8 +385,8 @@ module cnn_top (
     // =========================================================================
     // Debug monitor — compile with +define+VERBOSE to enable per-cycle output
     // WARNING: produces ~86 000 lines per full run — off by default
-    // synthesis translate_off
     // =========================================================================
+    `ifndef SYNTHESIS // synthesis translate_off
     `ifdef VERBOSE
     always_ff @(posedge clk) begin
         if (rst_n && mac_valid)
@@ -402,7 +402,7 @@ module cnn_top (
             $display("[%0t ns] DONE asserted", $time);
     end
     `endif // VERBOSE
-    // synthesis translate_on
+    `endif // synthesis translate_on
 
     // =========================================================================
     // Simulation assertions  (SVAAKB: no assert...else $fatal)

@@ -78,7 +78,7 @@ module pool_engine (
     // =============================================================================
     // Helper: compute 2-operand max (combinational)
     // =============================================================================
-    function automatic logic [7:0] max2 (input logic [7:0] a, input logic [7:0] b);
+    function logic [7:0] max2 (input logic [7:0] a, input logic [7:0] b);
         max2 = (a > b) ? a : b;
     endfunction
 
@@ -91,7 +91,7 @@ module pool_engine (
     // Full address ≤ 7*256 + 15*16 + 15 = 1792+240+15 = 2047  → fits [10:0]
     // Padded to [12:0] to match SRAM port width (8KB = 8192 entries).
     // =============================================================================
-    function automatic logic [12:0] rd_addr_calc(
+    function logic [12:0] rd_addr_calc(
         input logic [2:0] ch_i,
         input logic [2:0] orow_i,
         input logic [2:0] ocol_i,
@@ -100,15 +100,13 @@ module pool_engine (
     );
         logic [4:0] in_row;
         logic [4:0] in_col;
-        logic [12:0] addr;
-        in_row = {1'b0, orow_i, 1'b0} + {4'b0, row_off};  // orow*2 + row_off
-        in_col = {1'b0, ocol_i, 1'b0} + {4'b0, col_off};  // ocol*2 + col_off
-        addr   = {2'b00, ch_i, 8'h00} + {4'b0, in_row, 4'b0} + {8'b0, in_col};
-        return addr;
+        in_row = {1'b0, orow_i, 1'b0} + {4'b0, row_off};
+        in_col = {1'b0, ocol_i, 1'b0} + {4'b0, col_off};
+        rd_addr_calc = {2'b00, ch_i, 8'h00} + {4'b0, in_row, 4'b0} + {8'b0, in_col};
     endfunction
 
     // Output SRAM address:  ch*64 + out_row*8 + out_col
-    function automatic logic [12:0] wr_addr_calc(
+    function logic [12:0] wr_addr_calc(
         input logic [2:0] ch_i,
         input logic [2:0] orow_i,
         input logic [2:0] ocol_i

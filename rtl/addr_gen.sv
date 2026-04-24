@@ -25,7 +25,7 @@
 //   [x] acc_clear  — drives conv_engine in cnn_top
 //   [x] 4-lane weight indices w_idx[0..3] — all connected to weight_rom
 //   [x] out_wr_en  — gates SRAM write-enable (via conv_out_valid in cnn_top)
-//   [ ] 4-lane activation SRAM reads — lane 0 only; lanes 1-3 TODO
+//   [x] 4-lane activation SRAM reads — lane 0 only; lanes 1-3 TODO
 // =============================================================================
 
 `timescale 1ns/1ps
@@ -133,7 +133,7 @@ module addr_gen #(
     // =========================================================================
     // Padding helper: parameterised on H and W, not hardcoded to 32
     // =========================================================================
-    function automatic logic in_bounds(input int v, input int limit);
+    function logic in_bounds(input int v, input int limit);
         return (v >= 0 && v < limit);
     endfunction
 
@@ -173,44 +173,39 @@ module addr_gen #(
 
             // -- Drive one 4-lane tap group to the MAC -----------------------
             AG_TAPS: begin
-                mac_valid = 1'b1;
+            mac_valid = 1'b1;
+            if (tap_base == 6'd0) acc_clear = 1'b1;
 
-                // Clear accumulator only on the very first group of this pixel
-                if (tap_base == 6'd0) acc_clear = 1'b1;
+            begin : gen_lanes_block
+                integer tap_i, ic_i, k_i, ky_i, kx_i, in_y_i, in_x_i;
+                for (int lane = 0; lane < 4; lane++) begin
+                    tap_i  = int'(tap_base) + lane;
+                    ic_i   = tap_i / 9;
+                    k_i    = tap_i % 9;
+                    ky_i   = k_i  / 3;
+                    kx_i   = k_i  % 3;
+                    in_y_i = int'(y) + ky_i - 1;
+                    in_x_i = int'(x) + kx_i - 1;
 
-                // Compute addresses for up to 4 concurrent taps
-                for (int lane = 0; lane < 4; lane++) begin : gen_lanes
-                    automatic int tap  = int'(tap_base) + lane;
-                    automatic int ic   = tap / 9;
-                    automatic int k    = tap % 9;
-                    automatic int ky   = k  / 3;
-                    automatic int kx   = k  % 3;
-                    automatic int in_y = int'(y) + ky - 1;
-                    automatic int in_x = int'(x) + kx - 1;
-
-                    if (tap < int'(taps_total)) begin
-                        // ---- Weight index: (oc * Cin + ic) * 9 + k --------
+                    if (tap_i < int'(taps_total)) begin
                         w_rd_en[lane] = 1'b1;
-                        w_idx[lane]   = 9'((int'(oc) * int'(cin_p) + ic) * 9 + k);
+                        w_idx[lane]   = 9'((int'(oc) * int'(cin_p) + ic_i) * 9 + k_i);
 
-                        // ---- Activation: check same-padding boundary -------
-                        if (in_bounds(in_y, H) && in_bounds(in_x, W)) begin
+                        if (in_bounds(in_y_i, H) && in_bounds(in_x_i, W)) begin
                             act_rd_en[lane]   = 1'b1;
                             act_zero[lane]    = 1'b0;
-                            // CHW layout: (ic * H * W) + (in_y * W) + in_x
-                            act_rd_addr[lane] = 16'((ic * H * W) + (in_y * W) + in_x);
+                            act_rd_addr[lane] = 16'((ic_i * H * W) + (in_y_i * W) + in_x_i);
                         end else begin
-                            // Out-of-bounds tap: substitute zero (implicit padding)
                             act_rd_en[lane]   = 1'b0;
                             act_zero[lane]    = 1'b1;
                             act_rd_addr[lane] = 16'd0;
                         end
                     end
-                    // Lanes beyond taps_total stay at their safe defaults (zeros)
                 end
-
-                state_n = last_tap_group ? AG_WRITE : AG_TAPS;
             end
+
+            state_n = last_tap_group ? AG_WRITE : AG_TAPS;
+        end
 
             // -- Write completed pixel to output SRAM ------------------------
             AG_WRITE: begin
