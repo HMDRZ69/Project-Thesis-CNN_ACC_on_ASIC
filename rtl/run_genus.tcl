@@ -1,10 +1,10 @@
 ##############################################################################
-#  Genus Synthesis Script — CNN Accelerator ASIC
+#  Genus Synthesis Script — CNN Accelerator on ASIC
 #  Target Process : IHP SG13G2 130nm
 #  Top Module     : cnn_top
 #  Clock Target   : 100 MHz (10 ns period)
 #  Corner         : Typical — 1.20V, 25°C
-#  Author         : Hamed Rahimi  (OTH Regensburg MSc Thesis 2024–2027)
+#  Author         : Hamed Ramezanzadeh  (OTH Regensburg MSc Project Thesis 2025-2026)
 ##############################################################################
 
 ##############################################################################
