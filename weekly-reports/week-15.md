@@ -47,7 +47,7 @@
 * [rtl/genus\_out/timing\_setup.rpt](https://github.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/blob/main/genus_out/timing_setup.rpt)
 * [rtl/genus\_out/power.rpt](https://github.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/blob/main/genus_out/power.rpt)
 * [rtl/genus\_out/qor.rpt](https://github.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/blob/main/genus_out/qor.rpt)
-
+* [simulation/gls_sim.log](https://github.com/HMDRZ69/Project-Thesis-CNN_ACC_on_ASIC/blob/main/simulation/gls_sim.log)
 ---
 
 ### Results & Outputs
