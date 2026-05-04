@@ -24,6 +24,7 @@ Activations: 8-bit unsigned | Weights: 8-bit signed | Accumulator: 32-bit
 - `weekly-reports/` → one Markdown file per week  
 - `rtl/` → Verilog/SystemVerilog source code (controller, addr_gen, SRAM models, integration, stubs)  
 - `simulation/` → testbenches, Xcelium scripts, waveform screenshots  
+- `genus_out/` → Synthesis scripts and reports 
 
 ### Weekly Progress
 
