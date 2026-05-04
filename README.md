@@ -2,7 +2,7 @@
 
 **Master's Project Thesis**  
 **Student:** Hamed Ramezanzadeh  
-**Supervisor:** Prof. Dr. Florian Ashauer  
+**Supervisor:** Prof. Dr. Florian Aschauer  
 **Start Date:** November 2025
 
 ### Project Overview
@@ -43,16 +43,12 @@ Activations: 8-bit unsigned | Weights: 8-bit signed | Accumulator: 32-bit
 | 12   | 2026-02-22     | Top-level integration (`cnn_top`), conv_engine interface & stub                     | [week-12.md](weekly-reports/week-12.md) | 
 | 13   | 2026-03-14     | RTL finalization, full CNN datapath integration & simulation verification           | [week-13.md](weekly-reports/week-13.md) |
 | 14   | 2026-04-24     | First ASIC synthesis (Cadence Genus), QoR analysis & optimization issues identified | [week-14.md](weekly-reports/week-14.md) |
+| 15   | 2026-05-01     | Second ASIC synthesis Real SRAM macro + GLS Simulation (Cadence Genus + Xcelium)    | [week-15.md](weekly-reports/week-15.md) |
 
-*Last updated: April 2026*  
+*Last updated: May 2026*  
 *Current status:* 
 - Full CNN RTL (control + datapath) implemented and functionally verified. Initial ASIC synthesis using Cadence Genus successfully completed with SG13G2 standard-cell library.
 - Control flow, address generation, convolution engine, and memory system are integrated. However, during synthesis, major datapath blocks (conv_engine, SRAM, ROM) were optimized away due to lack of observable outputs.
 - Next focus is to preserve the full datapath through synthesis, correct RTL connectivity, and move toward realistic ASIC implementation (including SRAM macro integration and physical design preparation).
-
-*Current Challenges:*
-- Datapath not preserved during synthesis (optimization issue)
-- Behavioral SRAM not suitable for final ASIC flow. Should replace with a SRAM Macro
-- Need for proper top-level observability and constraints
 
 Feel free to open a GitHub Issue or contact me via email for questions, feedback or discussion.
