@@ -34,18 +34,18 @@
 
 ### Innovus P&R Files
 
-- [Innovus/I-RTL/run_innovus.tcl](../Innovus/I-RTL/run_innovus.tcl) — corrected and verified (6 bugs fixed, catch wrappers applied)
-- [Innovus/I-RTL/mmmc.tcl](../Innovus/I-RTL/mmmc.tcl) — used unchanged
-- [Innovus/innovus_out/gds/cnn_top_final.gds](../Innovus/innovus_out/gds/cnn_top_final.gds) — GDSII layout ✅
-- [Innovus/innovus_out/netlist/cnn_top_final.v](../Innovus/innovus_out/netlist/cnn_top_final.v) — post-route gate-level netlist ✅
-- [Innovus/innovus_out/sdc/cnn_top_final.sdc](../Innovus/innovus_out/sdc/cnn_top_final.sdc) — post-route SDC ✅
-- [Innovus/innovus_out/reports/drc.rpt](../Innovus/innovus_out/reports/drc.rpt) — 0 violations ✅
-- [Innovus/innovus_out/reports/area_postroute.rpt](../Innovus/innovus_out/reports/area_postroute.rpt) — 630,304 µm² ✅
-- [Innovus/innovus_out/reports/power_postroute.rpt](../Innovus/innovus_out/reports/power_postroute.rpt) ✅
-- [Innovus/innovus_out/checkpoints/cnn_top_placed.enc](../Innovus/innovus_out/checkpoints/cnn_top_placed.enc) ✅
-- [Innovus/innovus_out/checkpoints/cnn_top_cts.enc](../Innovus/innovus_out/checkpoints/cnn_top_cts.enc) ✅
-- [Innovus/innovus_out/checkpoints/cnn_top_routed.enc](../Innovus/innovus_out/checkpoints/cnn_top_routed.enc) ✅
-- [Innovus/timingReports/](../Innovus/timingReports/) — auto-generated Innovus timing reports at each opt stage ✅
+- [Cadence/Innovus/I-RTL/run_innovus.tcl](../Cadence/Innovus/I-RTL/run_innovus.tcl) — corrected and verified (6 bugs fixed, catch wrappers applied)
+- [Cadence/Innovus/I-RTL/mmmc.tcl](../Cadence/Innovus/I-RTL/mmmc.tcl) — used unchanged
+- [Cadence/Innovus/innovus_out/gds/cnn_top_final.gds](../Cadence/Innovus/innovus_out/gds/cnn_top_final.gds) — GDSII layout ✅
+- [Cadence/Innovus/innovus_out/netlist/cnn_top_final.v](../Cadence/Innovus/innovus_out/netlist/cnn_top_final.v) — post-route gate-level netlist ✅
+- [Cadence/Innovus/innovus_out/sdc/cnn_top_final.sdc](../Cadence/Innovus/innovus_out/sdc/cnn_top_final.sdc) — post-route SDC ✅
+- [Cadence/Innovus/innovus_out/reports/drc.rpt](../Cadence/Innovus/innovus_out/reports/drc.rpt) — 0 violations ✅
+- [Cadence/Innovus/innovus_out/reports/area_postroute.rpt](../Cadence/Innovus/innovus_out/reports/area_postroute.rpt) — 630,304 µm² ✅
+- [Cadence/Innovus/innovus_out/reports/power_postroute.rpt](../Cadence/Innovus/innovus_out/reports/power_postroute.rpt) ✅
+- [Cadence/Innovus/innovus_out/checkpoints/cnn_top_placed.enc](../Cadence/Innovus/innovus_out/checkpoints/cnn_top_placed.enc) ✅
+- [Cadence/Innovus/innovus_out/checkpoints/cnn_top_cts.enc](../Cadence/Innovus/innovus_out/checkpoints/cnn_top_cts.enc) ✅
+- [Cadence/Innovus/innovus_out/checkpoints/cnn_top_routed.enc](../Cadence/Innovus/innovus_out/checkpoints/cnn_top_routed.enc) ✅
+- [Cadence/Innovus/timingReports/](../Cadence/Innovus/timingReports/) — auto-generated Innovus timing reports at each opt stage ✅
 
 ---
 
