@@ -28,7 +28,7 @@ Activations: 8-bit unsigned | Weights: 8-bit signed | Accumulator: 32-bit
 - `Cadence/Xcelium/` → Xcelium scripts (testbenches, Verilog/SystemVerilog source code), simulation logs
 - `Cadence/Genus/` → Genus synthesis scripts (run_genus.tcl, Verilog/SystemVerilog source code), genus_out reports (netlist, reports, SDC)
 - `Cadence/Innovus` →  Innovus P&R scripts (mmmc.tcl, run_innovus.tcl), innovus_out deliverables (GDSII, post-route netlist, SDC, DRC report)
-- `simulation` → Very basic simulation waveforms and outlines from starting weeks.  
+- `simulation` → Basic simulation waveforms and outlines from starting weeks.  
 
 ### Weekly Progress
 
