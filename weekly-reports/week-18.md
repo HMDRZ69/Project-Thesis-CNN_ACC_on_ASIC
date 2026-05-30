@@ -29,7 +29,7 @@
 ### RTL / Synthesis Files
 
 - [Cadence/Xcelium/X-RTL/pool_engine.sv](../Cadence/Xcelium/X-RTL/pool_engine.sv) — corrected version (from Week 17)
-- [Cadence/Xcelium/X-RTL/tb_cnn_top.sv](../Cadence/Xcelium/X-RTL/pool_engine.sv) — updated version (from Week 17, GLS `ag_enable` fix applied this week)
+- [Cadence/Xcelium/X-RTL/tb_cnn_top.sv](../Cadence/Xcelium/X-RTL/tb_cnn_top.sv) — updated version (from Week 17, GLS `ag_enable` fix applied this week)
 - [Cadence/Xcelium/X-Log's/full_system_integration_testbench.log](../Cadence/Xcelium/X-Log's/full_system_integration_testbench.log) — updated (20/20 PASSED)
 - [Cadence/Genus/Final_Genus_Out/netlist/cnn_top_netlist.v](../Cadence/Genus/Final_Genus_Out/netlist/cnn_top_netlist.v) — regenerated from corrected RTL
 - [Cadence/Genus/Final_Genus_Out/sdc/cnn_top.sdc](../Cadence/Genus/Final_Genus_Out/sdc/cnn_top.sdc) — unchanged
