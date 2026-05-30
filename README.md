@@ -1,4 +1,4 @@
-# Digital Design of a Basic CNN Accelerator on an ASIC in IHP 130nm Technology
+# Digital Design of a Basic CNN Accelerator on ASIC in IHP 130nm Technology
 
 **Master's Project Thesis**  
 **Student:** Hamed Ramezanzadeh  
