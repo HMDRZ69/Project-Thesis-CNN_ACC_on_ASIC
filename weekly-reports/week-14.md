@@ -39,12 +39,12 @@
   - [Cadence/Genus/1st-genus-out/cnn_top_genus.db](../Cadence/Genus/1st-genus-out/cnn_top_genus.db)
   - [Cadence/Genus/1st-genus-out/cnn_top_genus.db](../Cadence/Genus/1st-genus-out/tb_cnn_top.sv)
   - [Cadence/Genus/1st-genus-out/netlist/cnn_top_netlist.v](../Cadence/Genus/1st-genus-out/netlist/cnn_top_netlist.v)
-  - [Cadence/Genus/1st-genus-out/sdc/cnn_top.sdc](../Cadence/Genus/1st-genus-out/cnn_top.sdc)
-  - [Cadence/Genus/1st-genus-out/reports/area.rpt](../Cadence/Genus/1st-genus-out/area.rpt)
-  - [Cadence/Genus/1st-genus-out/reports/timing_setup.rpt](../Cadence/Genus/1st-genus-out/timing_setup.rpt)
-  - [Cadence/Genus/1st-genus-out/reports/timing_hold.rpt](../Cadence/Genus/1st-genus-out/timing_hold.rpt)
-  - [Cadence/Genus/1st-genus-out/reports/power.rpt](../Cadence/Genus/1st-genus-out/power.rpt)
-  - [Cadence/Genus/1st-genus-out/reports/qor.rpt](../Cadence/Genus/1st-genus-out/qor.rpt)
+  - [Cadence/Genus/1st-genus-out/sdc/cnn_top.sdc](../Cadence/Genus/1st-genus-out/sdc/cnn_top.sdc)
+  - [Cadence/Genus/1st-genus-out/reports/area.rpt](../Cadence/Genus/1st-genus-out/reports/area.rpt)
+  - [Cadence/Genus/1st-genus-out/reports/timing_setup.rpt](../Cadence/Genus/1st-genus-out/reports/timing_setup.rpt)
+  - [Cadence/Genus/1st-genus-out/reports/timing_hold.rpt](../Cadence/Genus/1st-genus-out/reports/timing_hold.rpt)
+  - [Cadence/Genus/1st-genus-out/reports/power.rpt](../Cadence/Genus/1st-genus-out/reports/power.rpt)
+  - [Cadence/Genus/1st-genus-out/reports/qor.rpt](../Cadence/Genus/1st-genus-out/reports/qor.rpt)
 
 ### Results & Outputs
 
