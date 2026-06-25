@@ -61,5 +61,3 @@ These are commercial tools — manuals are accessible via university license onl
 |-----|---------|--------------|
 | [12] | RTL source, synthesis & P&R reports, weekly progress | root of this repo |
 | [13] | Genus area report (`area.rpt`), Innovus P&R log, timing reports | `Cadence/Genus/Final_Genus_Out/reports/` and `Cadence/Innovus/` |
-| [14] | Floorplan screenshot, final post-route layout screenshot | captured from Innovus 23.31 GUI, June 2026 |
-| [15] | Simplified dataflow block diagram (`BlockDiagram.png`) | June 2026 |
