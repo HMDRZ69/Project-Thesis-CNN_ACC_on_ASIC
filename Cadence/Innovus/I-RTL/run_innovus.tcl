@@ -297,17 +297,21 @@ catch {
 #   a .map file provided in libs.tech/innovus/ of the IHP PDK.
 
 set GDS_LAYERMAP /home/rah47472/pdk/ihp/sg13g2/SG13G2_618_rev1.3.2/lib/SG13_dev/SG13G2.layermap
+set STD_GDS     $LIB_ROOT/sg13g2_stdcell/gds/sg13g2_stdcell.gds
+set SRAM_GDS    $LIB_ROOT/sg13g2_sram/gds/RM_IHPSG13_1P_4096x8_c3_bm_bist.gds
+
 if {[file exists $GDS_LAYERMAP]} {
     streamOut $RESULTS_DIR/gds/cnn_top_final.gds \
         -mapFile $GDS_LAYERMAP \
         -libName cnn_top \
-        -units   1000
+        -units   1000 \
+        -merge   [list $STD_GDS $SRAM_GDS]
 } else {
     puts "WARNING: GDS layer map not found at $GDS_LAYERMAP"
-    puts "         Writing GDS without explicit layer map."
     streamOut $RESULTS_DIR/gds/cnn_top_final.gds \
         -libName cnn_top \
-        -units   1000
+        -units   1000 \
+        -merge   [list $STD_GDS $SRAM_GDS]
 }
 
 # Innovus design database (allows re-opening without re-running)
@@ -325,3 +329,18 @@ puts "  Netlist: $RESULTS_DIR/netlist/cnn_top_final.v"
 puts "  Reports: $RESULTS_DIR/reports/"
 puts "============================================================"
 puts ""
+
+# Write DEF for re-loading the layout in Innovus or other tools
+catch {
+    write_def $RESULTS_DIR/cnn_top_final.def
+    puts "  DEF    : $RESULTS_DIR/cnn_top_final.def"
+}
+
+##############################################################################
+# 13. OPEN GUI FOR LAYOUT INSPECTION
+# win   : opens the Innovus layout GUI
+# suspend: pauses the script so you can interact with the layout
+#          Type 'resume' in the terminal to continue/exit when done
+##############################################################################
+win
+suspend
