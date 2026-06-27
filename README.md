@@ -1,6 +1,6 @@
 # Digital Design of a Basic CNN Accelerator on ASIC in IHP 130nm Technology
 
-**Master's Project Thesis**  
+**Master's Project**  
 **Student:** Hamed Ramezanzadeh  
 **Supervisor:** Prof. Dr.-Ing Florian Aschauer  
 **Start Date:** November 2025
@@ -30,8 +30,7 @@ Primary deliverable: `Cadence/Innovus/innovus_out/gds/cnn_top_final.gds`
 
 Design and implementation of a lightweight digital hardware accelerator for a basic Convolutional Neural Network (CNN) using **IHP SG13G2 130nm** CMOS technology on an ASIC.
 
-The project validates the complete ASIC digital design flow:
-RTL design → functional simulation → synthesis preparation → place & route → post-layout verification
+The project validates the complete ASIC digital design flow using the Cadence toolchain (Xcelium → Genus → Innovus).
 
 ### CNN Architecture
 
