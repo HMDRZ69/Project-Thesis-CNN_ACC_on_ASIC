@@ -121,23 +121,18 @@ xrun -sv \
 
 ### 2. Waveform Viewing (SimVision)
 
-```bash
-# Option A — dump to VCD for offline viewing
-# Add to testbench: $dumpfile("cnn_top.vcd"); $dumpvars(0, tb_cnn_top);
-simvision cnn_top.vcd &
+### 2. Waveform Viewing (SimVision)
 
-# Option B — reopen existing simulation database
+Xcelium automatically saves the simulation database to `xcelium.d/` during every run.
+To open it in SimVision after the simulation completes, run:
+
+```bash
 simvision xcelium.d/tb_cnn_top.shm &
 ```
 
-Key signals to probe in SimVision:
-
-```bash
-tb_cnn_top/clk
-tb_cnn_top/done
-tb_cnn_top/u_dut/u_fsm/state
-tb_cnn_top/u_dut/conv_out_valid
-tb_cnn_top/u_dut/u_sram_a/rdata
+In SimVision, use the hierarchy panel on the left to navigate to `tb_cnn_top`
+and drag signals such as `clk`, `done`, `state`, and `conv_out_valid` into the
+waveform window.
 ```
 
 ### 3. Synthesis (Genus)
