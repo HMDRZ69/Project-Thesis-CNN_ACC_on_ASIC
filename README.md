@@ -1,8 +1,8 @@
 # Digital Design of a Basic CNN Accelerator on ASIC in IHP 130nm Technology
 
-**Master's Project**
-**Student:** Hamed Ramezanzadeh
-**Supervisor:** Prof. Dr.-Ing Florian Aschauer
+**Master's Project** \
+**Student:** Hamed Ramezanzadeh \
+**Supervisor:** Prof. Dr.-Ing Florian Aschauer \
 **Start Date:** November 2025
 
 ---
@@ -121,25 +121,18 @@ xrun -sv \
 
 ### 2. Waveform Viewing (SimVision)
 
-To dump and view waveforms, add the following to `tb_cnn_top.sv` inside the `initial` block (or enable via a `+define` flag), then open SimVision after the run:
-
 ```bash
-# Option A — open SimVision interactively after simulation
-xrun -sv -timescale 1ns/1ps -notimingchecks \
-  <same file list as above> \
-  -gui -input waves.tcl
-
-# Option B — dump to VCD file for offline viewing
+# Option A — dump to VCD for offline viewing
 # Add to testbench: $dumpfile("cnn_top.vcd"); $dumpvars(0, tb_cnn_top);
-# Then open with:
 simvision cnn_top.vcd &
 
-# Option C — open SimVision on the existing run database
+# Option B — reopen existing simulation database
 simvision xcelium.d/tb_cnn_top.shm &
 ```
 
 Key signals to probe in SimVision:
-```
+
+```bash
 tb_cnn_top/clk
 tb_cnn_top/done
 tb_cnn_top/u_dut/u_fsm/state
