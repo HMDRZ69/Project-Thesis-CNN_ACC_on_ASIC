@@ -121,8 +121,6 @@ xrun -sv \
 
 ### 2. Waveform Viewing (SimVision)
 
-### 2. Waveform Viewing (SimVision)
-
 Xcelium automatically saves the simulation database to `xcelium.d/` during every run.
 To open it in SimVision after the simulation completes, run:
 
@@ -133,7 +131,7 @@ simvision xcelium.d/tb_cnn_top.shm &
 In SimVision, use the hierarchy panel on the left to navigate to `tb_cnn_top`
 and drag signals such as `clk`, `done`, `state`, and `conv_out_valid` into the
 waveform window.
-```
+
 
 ### 3. Synthesis (Genus)
 
