@@ -1,0 +1,8 @@
+# Tool session dumps (not evidence, just raw tool chatter)
+innovus_run.log
+
+
+
+# PDK / library files (already open-source and referenced in README — no # need to duplicate them in your repo)
+*.lib
+*.lef
